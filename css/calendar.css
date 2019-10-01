@@ -1,0 +1,83 @@
+@import '../css/normalize.css'; /* delete me */
+
+#calendar {
+    position: relative;
+    margin: 15px;
+    padding: 10px;
+    outline: 1px solid rgba(0,0,0,.05);
+    box-shadow: 0 20px 20px -15px rgba(0,0,0,.2);
+    overflow: hidden;
+}
+.cblock {
+    display: flex;
+    flex-direction: row;
+}
+.cblock--list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.cblock--list li {
+    position: relative;
+    flex-basis: calc(100% / 7);
+}
+.cblock--nav,
+.cblock--weekdays {
+    flex-wrap: nowrap;
+}
+.cblock--nav {
+    position: relative;
+    justify-content: space-between;
+    z-index: 2;
+}
+.cblock--days {
+    flex-wrap: wrap;
+}
+.cblock--days li[aria-details]:after {
+    content: attr(aria-details);
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    outline: 1px solid rgba(0,0,0,.1);
+    padding: 10px;
+    font-size: 5vw;
+    line-height: 5vw;
+    z-index: 9;
+}
+.cblock--days li[aria-details]:hover:after {
+    display: block;
+}
+.cblock--list {
+    text-align: center;
+    line-height: 10vw;
+    font-size: 5vw;
+    font-weight: 300;
+}
+.cblock--weekdays {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.cheader {
+    position: relative;
+}
+.cheader .ctitle {
+    font-size: 8vw;
+    line-height: 10vw;
+}
+.cheader .title--month {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    z-index: 1;
+}
+.button {
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
